@@ -8,7 +8,7 @@ Publishable key:
 sb_publishable_Vq7v3VKWsGAA-jpms5k2PA_PVXGJcZC
 
 Secret keys:
-sb_secret_KpRLUjR-WsKwHf0n7nz2ag_-7hTGxrP
+[YOUR_SUPABASE_SECRET_KEY]
 
 password:
-globalhopo@Eskita1
+[YOUR_DATABASE_PASSWORD]

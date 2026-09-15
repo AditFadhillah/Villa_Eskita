@@ -18,11 +18,11 @@ Once project is created:
 
 Your credentials:
 ```
-Project ID: zjruplmkzijumnrtyblk
-URL: https://zjruplmkzijumnrtyblk.supabase.co
-Anon Key: sb_publishable_Vq7v3VKWsGAA-jpms5k2PA_PVXGJcZC
-Service Role Key: sb_secret_KpRLUjR-WsKwHf0n7nz2ag_-7hTGxrP
-Database Password: globalhopo@Eskita1
+Project ID: [YOUR_PROJECT_ID]
+URL: [YOUR_SUPABASE_URL]
+Anon Key: [YOUR_ANON_KEY]
+Service Role Key: [YOUR_SERVICE_ROLE_KEY]
+Database Password: [YOUR_PASSWORD]
 ```
 
 ### 3. Create Storage Bucket (for images)
