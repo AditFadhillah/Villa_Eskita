@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="VillaManager.Api/VillaManager.Api.csproj" />
+  <Project Path="VillaManager.Core/VillaManager.Core.csproj" />
+  <Project Path="VillaManager.Infrastructure/VillaManager.Infrastructure.csproj" />
+  <Project Path="VillaManager.Tests/VillaManager.Tests.csproj" />
+</Solution>

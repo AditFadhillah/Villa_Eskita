@@ -1,0 +1,95 @@
+<section id="contact" class="contact-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>{{ translations.contact?.title }}</h2>
+      <p>{{ translations.contact?.subtitle }}</p>
+    </div>
+
+    <div class="contact-wrapper">
+      <div class="contact-info">
+        <div class="info-item">
+          <div>
+            <h3>{{ translations.contact?.location }}</h3>
+            <p>{{ villaContact.address }}</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div>
+            <h3>{{ translations.contact?.phone }}</h3>
+            <p>{{ villaContact.phone }}</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div>
+            <h3>{{ translations.contact?.email }}</h3>
+            <p>{{ villaContact.email }}</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div>
+            <h3>{{ translations.contact?.hours }}</h3>
+            <p>{{ villaContact.hours }}</p>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="name">{{ translations.contact?.nameLabel }} *</label>
+          <input 
+            type="text" 
+            id="name" 
+            [(ngModel)]="contactForm.name" 
+            name="name"
+            [placeholder]="translations.contact?.namePlaceholder"
+            required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">{{ translations.contact?.emailLabel }} *</label>
+          <input 
+            type="email" 
+            id="email" 
+            [(ngModel)]="contactForm.email" 
+            name="email"
+            [placeholder]="translations.contact?.emailPlaceholder"
+            required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">{{ translations.contact?.phoneLabel }} *</label>
+          <input 
+            type="tel" 
+            id="phone" 
+            [(ngModel)]="contactForm.phone" 
+            name="phone"
+            [placeholder]="translations.contact?.phonePlaceholder"
+            required>
+        </div>
+
+        <div class="form-group">
+          <label for="message">{{ translations.contact?.messageLabel }} *</label>
+          <textarea 
+            id="message" 
+            [(ngModel)]="contactForm.message" 
+            name="message"
+            [placeholder]="translations.contact?.messagePlaceholder"
+            rows="5"
+            required></textarea>
+        </div>
+
+        <button 
+          type="submit" 
+          class="submit-btn"
+          [disabled]="!isFormValid() || submitting">
+          {{ submitting ? translations.contact?.sending : translations.contact?.submit }}
+        </button>
+      </form>
+    </div>
+
+    <!-- Success Message -->
+    <div *ngIf="submitted" class="alert alert-success">
+      {{ successMessage }}
+    </div>
+  </div>
+</section>

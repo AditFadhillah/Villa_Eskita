@@ -1,0 +1,39 @@
+<section id="home" class="hero">
+  <div class="hero-background" [style.background-image]="'url(' + villaData.backgroundImage + ')'"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="container">
+      <h1 class="hero-title">{{ translations.hero?.title }}</h1>
+      <p class="hero-subtitle">{{ translations.hero?.subtitle }}</p>
+      <p class="hero-details">{{ translations.hero?.description }}</p>
+      
+      <div class="villa-highlights">
+        <div class="highlight">
+          <h3>{{ villaData.maxGuests }}</h3>
+          <p>{{ translations.hero?.maxGuests }}</p>
+        </div>
+        <div class="highlight price-highlight">
+          <div class="price-option">
+            <p class="price-label">{{ translations.pricing?.weekday }}</p>
+            <h3>€{{ villaData.pricing.weekday.eur }}</h3>
+            <p class="price-sub">{{ villaData.pricing.weekday.idr.toLocaleString('id-ID') }} IDR</p>
+          </div>
+          <div class="price-option">
+            <p class="price-label">{{ translations.pricing?.weekend }}</p>
+            <h3>€{{ villaData.pricing.weekend.eur }}</h3>
+            <p class="price-sub">{{ villaData.pricing.weekend.idr.toLocaleString('id-ID') }} IDR</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="facilities-section">
+        <h2>{{ translations.facilities?.title }}</h2>
+        <div class="facilities-grid">
+          <span *ngFor="let facility of villaData.facilities" class="facility-badge">
+            {{ facility.icon }} {{ facility.label }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

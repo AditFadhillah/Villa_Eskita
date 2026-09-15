@@ -1,0 +1,27 @@
+<header class="header">
+  <div class="container">
+    <div class="header-content">
+      <div class="logo">
+        <h1>Villa Eskita</h1>
+      </div>
+      <nav class="nav">
+        <button 
+          *ngFor="let item of navItems"
+          (click)="scrollToSection(item.id)"
+          class="nav-link">
+          {{ item.label }}
+        </button>
+      </nav>
+      <div class="language-selector">
+        <button 
+          *ngFor="let lang of languages"
+          (click)="changeLanguage(lang)"
+          class="lang-btn"
+          [class.active]="currentLanguage === lang"
+          title="{{ languageLabels[lang] }}">
+          {{ lang.toUpperCase() }}
+        </button>
+      </div>
+    </div>
+  </div>
+</header>

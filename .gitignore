@@ -1,0 +1,65 @@
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.vs/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Build artifacts
+bin/
+obj/
+dist/
+build/
+*.o
+*.exe
+*.dll
+*.so
+
+# Node dependencies
+node_modules/
+package-lock.json
+npm-debug.log
+yarn-error.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+env/
+venv/
+ENV/
+
+# Logs
+logs/
+*.log
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# IDE specific files
+.idea/
+.project
+.classpath
+*.iml
+
+# OS specific
+Thumbs.db
+.DS_Store
+
+# Certificates
+*.pem
+*.key
+*.crt
+
+# Database
+*.db
+*.sqlite3

@@ -1,0 +1,14 @@
+Project ID:
+zjruplmkzijumnrtyblk
+
+API URL:
+https://zjruplmkzijumnrtyblk.supabase.co/rest/v1/
+
+Publishable key:
+sb_publishable_Vq7v3VKWsGAA-jpms5k2PA_PVXGJcZC
+
+Secret keys:
+sb_secret_KpRLUjR-WsKwHf0n7nz2ag_-7hTGxrP
+
+password:
+globalhopo@Eskita1
