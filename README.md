@@ -70,7 +70,7 @@ npm start
 Villa_Eskita/
 ├──Project Structure (Sort of Organized)
 
-```
+
 Villa_Eskita/
 ├── backend/
 │   ├── VillaManager.Api/          # ASP.NET Core API (main entry point)
@@ -98,6 +98,8 @@ Villa_Eskita/
 ├── .env                           # Local config
 ├── .env.example                   # Template for .env
 ├──Configuration (Credentials Hidden)
+
+```
 
 ### Supabase
 Some Supabase stuff is configured, but I'm not listing the credentials here for security reasons.
