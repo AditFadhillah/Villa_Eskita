@@ -1,138 +1,130 @@
-# Villa Manager - Full Stack SaaS Platform
+# Villa Manager - Full Stack SaaS Platform (Work in Progress)
 
-A comprehensive property management and booking system for villa rental businesses. Consolidates bookings and messages from multiple platforms (WhatsApp, Airbnb, Agora) into a unified admin dashboard.
+A property management and booking system for villa rental businesses. Still figuring out how to consolidate bookings and messages from multiple platforms (WhatsApp, Airbnb, Agora) into a unified admin dashboard. Not fully implemented yet.
 
-## 🎯 Project Overview
+## Project Overview
 
-- **Backend**: ASP.NET Core 10.0 Web API with PostgreSQL
-- **Frontend**: Angular 18+ with responsive design
-- **Database**: Supabase (PostgreSQL + File Storage)
-- **Messaging**: WhatsApp Business API integration
+- Backend: ASP.NET Core 10.0 Web API with PostgreSQL (mostly set up)
+- Frontend: Angular 18+ with responsive design (basic setup done)
+- Database: Supabase (PostgreSQL + File Storage)
+- Messaging: WhatsApp Business API integration (planned)
 
-### Key Features (MVP)
-- ✅ Unified message inbox (WhatsApp, Airbnb, Agora, Direct)
-- ✅ Booking management dashboard
-- ✅ Guest information tracking
-- ✅ Public villa showcase website
-- ✅ Booking inquiry form
-- ✅ Admin authentication (JWT)
-- ✅ RESTful API with Swagger documentation
+### Features (Partially Implemented)
+- Unified message inbox (WhatsApp, Airbnb, Agora, Direct) - not done
+- Booking management dashboard - UI started, backend incomplete
+- Guest information tracking - schema exists, needs work
+- Public villa showcase website - basically working
+- Booking inquiry form - rough implementation
+- Admin authentication (JWT) - started but not tested
+- RESTful API with Swagger documentation - auto-generated
 
-## 🚀 Quick Start
+## Quick Start (If You Want to Try It)
 
-### Prerequisites
-- .NET SDK 10.0+
-- Node.js 20+ and npm
+### What You Need
+- .NET SDK 10.0 or later
+- Node.js 20+ with npm
 - Git
-- Supabase account (free tier available)
+- Supabase account (have one set up already)
 
-### 1. Environment Setup
+### Setup Steps (These Should Work, Probably)
 
 ```bash
-# Copy environment file
+# Copy the environment file
 cp .env.example .env
 
 # Edit .env with your credentials
-# Your Supabase credentials are already configured
+# Supabase stuff is already in there somewhere
 ```
 
-### 2. Backend Setup
-
+#### Backend
 ```bash
 cd backend
 
-# Install dependencies (already done)
-# dotnet restore
+# Dependencies should already be restored
 
-# Run migrations (auto-runs on startup, but can be manual)
+# Run migrations (hopefully)
 dotnet ef database update -p VillaManager.Infrastructure -s VillaManager.Api
 
-# Run API
+# Start the API
 dotnet run --project VillaManager.Api/VillaManager.Api.csproj
 
-# API runs at https://localhost:7001
-# Swagger UI: https://localhost:7001/swagger
+# Should be at https://localhost:7001
+# Swagger docs at https://localhost:7001/swagger (if it's working)
 ```
 
-### 3. Frontend Setup
-
+#### Frontend
 ```bash
 cd frontend
 
-# Install dependencies (already done)
-# npm install
+# Dependencies should already be installed
 
-# Run development server
+# Start dev server
 npm start
 
-# Frontend runs at http://localhost:4200
+# Should open at http://localhost:4200
 ```
 
 ## 📁 Project Structure
 
 ```
 Villa_Eskita/
+├──Project Structure (Sort of Organized)
+
+```
+Villa_Eskita/
 ├── backend/
-│   ├── VillaManager.Api/          # ASP.NET Core API
-│   ├── VillaManager.Core/         # Domain models & entities
-│   ├── VillaManager.Infrastructure/  # Database context & repos
-│   ├── VillaManager.Tests/        # Unit tests
-│   └── VillaManager.sln           # Solution file
+│   ├── VillaManager.Api/          # ASP.NET Core API (main entry point)
+│   ├── VillaManager.Core/         # Domain models and entities
+│   ├── VillaManager.Infrastructure/  # Database stuff, repositories
+│   ├── VillaManager.Tests/        # Tests (need more)
+│   └── VillaManager.sln           # The solution file
 │
 ├── frontend/
 │   ├── src/
 │   │   ├── app/
-│   │   │   ├── admin/             # Admin dashboard
-│   │   │   ├── public/            # Customer-facing site
-│   │   │   ├── shared/            # Shared components
-│   │   │   └── core/              # Services & auth
-│   │   └── environments/          # Config by environment
+│   │   │   ├── admin/             # Admin dashboard (work in progress)
+│   │   │   ├── public/            # Customer site (mostly done)
+│   │   │   ├── shared/            # Reusable components
+│   │   │   └── core/              # Services, auth stuff
+│   │   └── environments/          # Environment config
 │   ├── package.json
 │   └── angular.json
 │
 ├── docs/
-│   ├── ARCHITECTURE.md            # System design
-│   ├── DATABASE.md                # Database setup
-│   └── API.md                     # API documentation (coming)
+│   ├── ARCHITECTURE.md            # Design notes (incomplete)
+│   ├── DATABASE.md                # Database stuff
+│   └── API.md                     # API docs (not written yet)
 │
-├── .env                           # Environment variables (local)
-├── .env.example                   # Environment template
-├── .gitignore                     # Git ignore rules
-└── README.md                      # This file
-```
+├── .env                           # Local config
+├── .env.example                   # Template for .env
+├──Configuration (Credentials Hidden)
 
-## 🔐 Configuration
-
-### Supabase Credentials
-```
-Project ID: zjruplmkzijumnrtyblk
-API URL: https://zjruplmkzijumnrtyblk.supabase.co
-Database: postgresql://postgres:***@db.supabase.co:5432/postgres
-```
+### Supabase
+Some Supabase stuff is configured, but I'm not listing the credentials here for security reasons.
 
 ### Environment Variables
 Located in `.env`:
-- `SUPABASE_URL` - Supabase project URL
-- `SUPABASE_ANON_KEY` - Public API key
-- `SUPABASE_SERVICE_ROLE_KEY` - Service role key
-- `POSTGRES_URL` - Database connection string
-- `JWT_SECRET` - Secret for JWT token generation
-- `CORS_ALLOWED_ORIGINS` - Frontend URLs
+- SUPABASE_URL
+- SUPABASE_ANON_KEY
+- SUPABASE_SERVICE_ROLE_KEY
+- POSTGRES_URL
+- JWT_SECRET (needs to be set properly)
+- CORS_ALLOWED_ORIGINS
 
 ## 🗄️ Database
 
 ### Tables
 1. **properties** - Villa property details
-2. **bookings** - All booking records
-3. **messages** - Unified message inbox
+2. Database (Incomplete)
+
+### Tables (Probably)
+- properties - villa details (schema defined)
+- bookings - booking records (partially implemented)
+- messages - message inbox (not connected yet)
 
 ### Migrations
 ```bash
-# Create new migration
-dotnet ef migrations add MigrationName -p VillaManager.Infrastructure -s VillaManager.Api
-
-# Apply migrations
-dotnet ef database update -p VillaManager.Infrastructure -s VillaManager.Api
+# Create atabase update -p VillaManager.Infrastructure -s VillaManager.Api
 
 # Revert last migration
 dotnet ef migrations remove -p VillaManager.Infrastructure -s VillaManager.Api
@@ -142,51 +134,51 @@ dotnet ef migrations remove -p VillaManager.Infrastructure -s VillaManager.Api
 
 ### Public Endpoints
 ```
-GET    /api/property              - List properties
-GET    /api/property/{id}         - Get property details
-POST   /api/booking               - Create booking inquiry
-POST   /api/message/inquiry       - Submit contact form
+GETAPI Endpoints (These Might Work)
+
+### Public Endpoints (Probably Working)
+```
+GET    /api/property              - List properties (untested)
+GET    /api/property/{id}         - Get property details (untested)
+POST   /api/booking               - Create booking inquiry (rough)
+POST   /api/message/inquiry       - Contact form (basic)
 ```
 
-### Admin Endpoints (Requires Authentication)
+### Admin Endpoints (Need Work)
 ```
-GET    /api/booking               - List all bookings
-GET    /api/booking/{id}          - Get booking details
-PUT    /api/booking/{id}/status   - Update booking status
-GET    /api/message/inbox         - Unified inbox
-GET    /api/message/unread-count  - Unread message count
-POST   /api/message/{id}/read     - Mark message as read
-```
+GET    /api/booking               - List bookings (not connected)
+GET    /api/booking/{id}          - Get booking details (not connected)
+PUT    /api/booking/{id}/status   - Update status (not implemented)
+GET    /api/message/inbox         - Unified inbox (not done)
+GETTesting (Needs Work)
 
-## 🧪 Testing
-
-### Run Tests
 ```bash
 cd backend
 dotnet test
 ```
 
-### Test Coverage
-- Unit tests for services
-- Integration tests for API endpoints
-- (To be added) E2E tests for workflows
+Tests exist for some stuff, but coverage is limited. Need to add more.
 
 ## 🔧 Development Workflow
 
 ### Add a New Feature
 
-1. **Backend**
+1. Development Workflow (Sort Of)
+
+### Adding a Feature
+
+1. Backend
    ```bash
    cd backend
    # Create entity in VillaManager.Core/Entities/
    # Create migration
    dotnet ef migrations add FeatureName -p VillaManager.Infrastructure -s VillaManager.Api
-   # Create controller in VillaManager.Api/Controllers/
-   # Create tests
+   # Add controller in VillaManager.Api/Controllers/
+   # Write tests (if you remember)
    dotnet test
    ```
 
-2. **Frontend**
+2. Frontend
    ```bash
    cd frontend
    # Create component
@@ -197,22 +189,22 @@ dotnet test
    npm start
    ```
 
-3. **Integration**
+3. Integration
    - Connect frontend service to backend API
    - Update environment URLs
-   - Test full flow
-
-## 📚 Documentation
-
-- [Architecture](docs/ARCHITECTURE.md) - System design and components
+   - Test it (hopefully)cs/ARCHITECTURE.md) - System design and components
 - [Database](docs/DATABASE.md) - Schema and migrations
-- [API](docs/API.md) - Endpoint documentation (coming soon)
+- [Documentation
 
-## 🚢 Deployment
+- [Architecture](docs/ARCHITECTURE.md) - System design (incomplete)
+- [Database](docs/DATABASE.md) - Database info
+- [API](docs/API.md) - API docs (not written yet
+```bash
+# RDeployment (Not Ready)
 
 ### Development
 ```bash
-# Run both simultaneously in separate terminals
+# Run both in separate terminals
 
 # Terminal 1
 cd backend && dotnet run --project VillaManager.Api/VillaManager.Api.csproj
@@ -222,29 +214,19 @@ cd frontend && npm start
 ```
 
 ### Production
-- Deploy backend to Azure App Service / AWS EC2 / Heroku
-- Deploy frontend to Azure Static Web Apps / Netlify / Vercel
-- Database: Supabase (automatically managed)
-- File storage: Supabase Storage or AWS S3
-
-## 🛠️ Troubleshooting
+- Not ready for production yet
+- CTroubleshooting (Maybe)
 
 ### Port Already in Use
 ```bash
-# Find process using port 7001
+# Find process on port 7001
 lsof -i :7001
 # Kill it
 kill -9 <PID>
 ```
 
 ### Database Connection Issues
-```bash
-# Test connection
-psql postgresql://postgres:password@db.supabase.co:5432/postgres
-
-# Check .env credentials
-cat .env
-```
+Check if your .env file has the right Supabase credentials.
 
 ### Frontend Build Errors
 ```bash
@@ -259,21 +241,27 @@ For issues and feature requests:
 - Create an issue in GitHub
 - Contact: [your-email@example.com]
 
-## 📄 License
+## Contact
 
-This project is proprietary software. All rights reserved.
+For questions or issues:
+- Create an issue on GitHub
+- Or email [add email later]
+
+## License
+
+Proprietary software. All rights reserved (or something like that).
 
 ---
 
-**Happy coding! 🚀**
+## What Still Needs to Happen
 
-**Next Steps:**
-1. ✅ Project structure created
-2. ✅ Backend configured with .NET, EF Core, PostgreSQL
-3. ✅ Frontend initialized with Angular 18
-4. ✅ Environment variables configured
-5. ⏭️ Run backend: `dotnet run --project backend/VillaManager.Api/VillaManager.Api.csproj`
-6. ⏭️ Run frontend: `npm start` (from frontend folder)
-7. ⏭️ Create authentication system
-8. ⏭️ Build admin dashboard UI
-9. ⏭️ Integrate WhatsApp API
+1. Set up backend database migrations properly
+2. Build admin dashboard UI (partially started)
+3. Connect message inbox to WhatsApp API (not started)
+4. Test authentication flow
+5. Integrate Airbnb and Agora APIs (planned but not started)
+6. Write actual tests
+7. Fix various bugs that probably exist
+8. Deploy somewhere (not urgent)
+9. Document the API properly
+10. Handle all the edge cases nobody thought of yet
