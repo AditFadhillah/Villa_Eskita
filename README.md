@@ -139,24 +139,25 @@ dotnet ef migrations remove -p VillaManager.Infrastructure -s VillaManager.Api
 GETAPI Endpoints (These Might Work)
 
 ### Public Endpoints (Probably Working)
-```
+
 GET    /api/property              - List properties (untested)
 GET    /api/property/{id}         - Get property details (untested)
 POST   /api/booking               - Create booking inquiry (rough)
 POST   /api/message/inquiry       - Contact form (basic)
-```
+
 
 ### Admin Endpoints (Need Work)
-```
+
 GET    /api/booking               - List bookings (not connected)
 GET    /api/booking/{id}          - Get booking details (not connected)
 PUT    /api/booking/{id}/status   - Update status (not implemented)
 GET    /api/message/inbox         - Unified inbox (not done)
 GETTesting (Needs Work)
 
-```bash
+bash
 cd backend
 dotnet test
+
 ```
 
 Tests exist for some stuff, but coverage is limited. Need to add more.
